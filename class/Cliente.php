@@ -12,7 +12,7 @@ class Cliente
 	{
 		if ($id) {
 			$this->id = $id;
-			$this->carregar();
+			$this->buscar();
 		}
 	}
 
@@ -26,9 +26,31 @@ class Cliente
 		return $lista;
 	}
 
-	//function inserir
+	public function buscar(){
+		$query = "SELECT id_cliente, nome_cliente FROM cliente WHERE id_cliente = " . $this->id;
+		$conexao = Conexao::realizarConexao();
+		$resultado = $conexao->query($query);
+		$lista = $resultado->fetchAll();
+		foreach ($lista as $linha) {
+			$this->nome = $linha['nome_cliente'];
+		}
+	}
 
-	//function atualizar
+	public function inserir(){
+		$query = "INSERT INTO cliente(nome_cliente, sexo_cliente, endereco_cliente, cargo_cliente) VALUES ('" . $this->nome . "','" . $this->sexo . "','" . $this->endereco . "','" . $this->cargo . "')";
+		$conexao = Conexao::realizarConexao();
+		$conexao->exec($query);
+	}
 
-	//function excluir
+	public function atualizar(){
+		$query = "UPDATE cliente SET nome_cliente = '" . $this->nome . "', sexo_cliente = '" . $this->sexo . "', endereco_cliente = '" . $this->endereco . "', cargo_cliente = '" . $this->cargo . "' WHERE id_cliente = " . $this->id;
+		$conexao = Conexao::realizarConexao();
+		$conexao->exec($query);
+	}
+
+	public function excluir(){
+		$query = "DELETE FROM cliente WHERE id_cliente = " . $this->id;
+		$conexao = Conexao::realizarConexao();
+		$conexao->exec($query);
+	}
 }

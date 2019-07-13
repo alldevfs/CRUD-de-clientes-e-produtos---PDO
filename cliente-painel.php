@@ -37,13 +37,13 @@ try {
      <tbody>
       <?php foreach ($lista as $linha): ?>
         <tr>
-          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['id'] ?></a></td>
-          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['nome'] ?></a></td>
-          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['sexo'] ?></a></td>
-          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['endereco'] ?></a></td>
-          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['cargo'] ?></a></td>
-          <td><a href="cliente-editar.php?id=<?php echo $linha['id'] ?>" class="btn btn-info"><span class="glyphicon glyphicon-cog"></span></a></td>
-          <td><a href="cliente-excluir-post.php?id=<?php echo $linha['id'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['id_cliente'] ?></a></td>
+          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['nome_cliente'] ?></a></td>
+          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['sexo_cliente'] ?></a></td>
+          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['endereco_cliente'] ?></a></td>
+          <td><a href="detalhe.php" class="btn btn-link"><?php echo $linha['cargo_cliente'] ?></a></td>
+          <td><a href="cliente-editar.php?id=<?php echo $linha['id_cliente'] ?>" class="btn btn-info"><span class="glyphicon glyphicon-cog"></span></a></td>
+          <td><a href="cliente-excluir-post.php?id=<?php echo $linha['id_cliente'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
       <?php endforeach ?>
     </tbody>
