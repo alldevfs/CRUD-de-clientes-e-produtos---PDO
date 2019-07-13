@@ -50,6 +50,6 @@ try {
   </table>
 </div>
 </div>
-<?php require_once 'parte-extra.php' ?>
-<?php require_once 'rodape.php' ?>
+
+<?php require_once 'footer.php' ?>
 
