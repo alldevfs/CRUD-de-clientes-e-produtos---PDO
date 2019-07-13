@@ -1,8 +1,8 @@
 <?php require_once 'global.php' ?>
 <?php
 try {
-
-	$id = isset($_GET['id_cliente']);
+	$id = $_GET['id_cliente'];
+	//$id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : '2';
 	$cliente = new Cliente($id);
 
 } catch (Exception $e) {

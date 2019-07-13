@@ -27,12 +27,16 @@ class Cliente
 	}
 
 	public function buscar(){
-		$query = "SELECT id_cliente, nome_cliente FROM cliente WHERE id_cliente = " . $this->id;
+		$query = "SELECT id_cliente, nome_cliente, sexo_cliente, endereco_cliente, cargo_cliente FROM cliente WHERE id_cliente = " . $this->id;
 		$conexao = Conexao::realizarConexao();
 		$resultado = $conexao->query($query);
 		$lista = $resultado->fetchAll();
 		foreach ($lista as $linha) {
+			$this->id = $linha['id_cliente'];
 			$this->nome = $linha['nome_cliente'];
+			$this->sexo = $linha['sexo_cliente'];
+			$this->endereco = $linha['endereco_cliente'];
+			$this->cargo = $linha['cargo_cliente'];
 		}
 	}
 
